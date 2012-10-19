@@ -14,6 +14,7 @@ namespace Engage.Dnn.TakeOut
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using System.Globalization;
     using System.Linq;
     using System.Xml.Linq;
 
@@ -61,10 +62,17 @@ namespace Engage.Dnn.TakeOut
         /// <param name="content">The content.</param>
         /// <param name="version">The version.</param>
         /// <param name="userId">The user ID.</param>
-        /// <exception cref="NotImplementedException">Always throws</exception>
         public void ImportModule(int moduleId, string content, string version, int userId)
         {
-            throw new NotImplementedException();
+            var portalService = this.GetPortalSettingsService(moduleId);
+            var moduleService = this.GetModuleSettingsService(moduleId);
+            foreach (var portalSetting in XElement.Parse(content).Descendants("PortalSetting"))
+            {
+                var settingName = portalSetting.Attribute("name").Value;
+                var settingValue = portalSetting.Attribute("value").Value;
+                portalService.UpdateSetting(settingName, settingValue);
+                moduleService.UpdateModuleSetting(settingName, true.ToString(CultureInfo.InvariantCulture));
+            }
         }
 
         /// <summary>Indicates whether the given portal setting should be exported.</summary>
