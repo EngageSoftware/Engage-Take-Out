@@ -14,6 +14,7 @@
       <releaseNotes src="ReleaseNotes_01.00.00.htm" />
       <dependencies>
         <dependency type="CoreVersion">5.0.0</dependency>
+        <dependency type="Type">System.Lazy`1</dependency> <!-- .NET 4 -->
       </dependencies>
       <components>
         <component type="ResourceFile">
