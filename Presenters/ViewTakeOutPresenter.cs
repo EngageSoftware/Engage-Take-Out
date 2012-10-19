@@ -42,8 +42,9 @@ namespace Engage.Dnn.TakeOut
         internal ViewTakeOutPresenter(IViewTakeOutView view, IPortalSettingsService portalSettingsService, IModuleSettingsService moduleSettingsService)
             : base(view)
         {
-            this.portalSettingsService = portalSettingsService ?? new PortalSettingsService(this.PortalId);
-            this.moduleSettingsService = moduleSettingsService ?? new ModuleSettingsService(this.ModuleId);
+            // NOTE: PortalId and ModuleId properties aren't setup yet, have to go through ModuleContext to get the right values
+            this.portalSettingsService = portalSettingsService ?? new PortalSettingsService(this.ModuleContext.PortalId);
+            this.moduleSettingsService = moduleSettingsService ?? new ModuleSettingsService(this.ModuleContext.ModuleId);
 
             this.View.Initialize += this.View_Initialize;
             this.View.OrderPlaced += this.View_OrderPlaced;

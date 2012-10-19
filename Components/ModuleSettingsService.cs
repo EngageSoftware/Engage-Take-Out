@@ -12,6 +12,8 @@
 namespace Engage.Dnn.TakeOut
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     using DotNetNuke.Entities.Modules;
 
@@ -29,6 +31,14 @@ namespace Engage.Dnn.TakeOut
         public ModuleSettingsService(int moduleId)
         {
             this.moduleId = moduleId;
+        }
+
+        /// <summary>Gets the module's settings.</summary>
+        /// <returns>A <see cref="IDictionary{TKey,TValue}" /> instance</returns>
+        public IDictionary<string, string> GetSettings()
+        {
+            var moduleSettings = this.moduleController.GetModuleSettings(this.moduleId);
+            return moduleSettings.Keys.Cast<string>().ToDictionary(key => key, key => (string)moduleSettings[key]);
         }
 
         /// <summary>Updates the module setting.</summary>

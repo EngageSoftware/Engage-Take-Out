@@ -9,23 +9,18 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 // DEALINGS IN THE SOFTWARE.
 
-using System;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Engage Take-Out")]
+[assembly: AssemblyTitle("Engage Take-OutTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Engage Software")]
-[assembly: AssemblyProduct("Engage Take-Out")]
+[assembly: AssemblyProduct("Engage Take-Out Tests")]
 [assembly: AssemblyCopyright("Copyright © Engage Software 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: CLSCompliant(true)]
-[assembly: Guid("4769abd9-9653-4bb2-a1a3-8b5596e2a5d5")]
-[assembly: AssemblyVersion("1.0.0.*")]
+[assembly: Guid("08bbc198-7d12-4ca8-a83e-b2bd7ebce1ab")]
+[assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-[assembly: InternalsVisibleTo("Engage.Take-Out.Tests")]
