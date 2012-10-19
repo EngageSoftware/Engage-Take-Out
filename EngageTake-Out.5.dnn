@@ -1,0 +1,71 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="Engage: Take-Out" type="Module" version="1.0.0">
+      <friendlyName>Engage: Take-Out</friendlyName>
+      <description>Allows importing and exporting site settings which aren't typically included in site templates</description>
+      <iconFile>DesktopModules/Engage/Take-Out/images/takeout-icon64.png</iconFile>
+      <owner>
+        <name>Brian Dukes</name>
+        <organization>Engage Software</organization>
+        <url>http://www.engagesoftware.com/</url>
+        <email>support@engagemodules.com</email>
+      </owner>
+      <license src="Licenses/EULA-Free.htm"/>
+      <releaseNotes src="ReleaseNotes_01.00.00.htm" />
+      <dependencies>
+        <dependency type="CoreVersion">5.0.0</dependency>
+      </dependencies>
+      <components>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/Engage/Take-Out</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules/Engage/Take-Out/SQL</basePath>
+            <script type="Install">
+              <name>01.00.00.SqlDataProvider</name>
+              <version>1.0.0</version>
+            </script>
+            <script type="UnInstall">
+              <name>Uninstall.SqlDataProvider</name>
+              <version latestVersion="latestVersion">1.0.0</version>
+            </script>
+          </scripts>
+        </component>
+        <component type="Module">
+          <desktopModule>
+            <moduleName>Engage: Take-Out</moduleName>
+            <foldername>Engage/Take-Out</foldername>
+            <businessControllerClass>Engage.Dnn.TakeOut.FeaturesController</businessControllerClass>
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>Engage: Take-Out</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey/>
+                    <controlSrc>DesktopModules/Engage/Take-Out/Views/ViewTakeOut.ascx</controlSrc>
+                    <controlType>View</controlType>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <name>Engage.Take-Out.dll</name>
+              <version latestVersion="latestVersion">1.0.0</version>
+            </assembly>
+          </assemblies>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
