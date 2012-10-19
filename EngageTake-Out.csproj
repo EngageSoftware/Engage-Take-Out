@@ -76,9 +76,9 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="WebFormsMvp, Version=0.9.7.4, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="WebFormsMvp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
       <HintPath>References\WebFormsMvp.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
