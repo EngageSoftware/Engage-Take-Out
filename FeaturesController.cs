@@ -11,17 +11,97 @@
 
 namespace Engage.Dnn.TakeOut
 {
+    using System;
+    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
+    using System.Xml.Linq;
 
-    /// <summary>
-    /// Contains basic information about the module and exposes which DNN integration points the module implements
-    /// </summary>
+    using DotNetNuke.Entities.Modules;
+
+    /// <summary>Contains basic information about the module and exposes which DNN integration points the module implements</summary>
     [SuppressMessage("Microsoft.Design", "CA1053:StaticHolderTypesShouldNotHaveConstructors", Justification = "DNN instantiates this class via reflection, so it needs an accessible constructor")]
-    public class FeaturesController
+    public class FeaturesController : IPortable
     {
-        /// <summary>
-        /// The prefix to use for settings names
-        /// </summary>
-        public const string SettingsPrefix = "Take-Out";
+        /// <summary>Backing field for <see cref="GetPortalSettingsService"/></summary>
+        private IPortalSettingsService portalSettingsService;
+
+        /// <summary>Backing field for <see cref="GetModuleSettingsService"/></summary>
+        private IModuleSettingsService moduleSettingsService;
+
+        /// <summary>Initializes a new instance of the <see cref="FeaturesController" /> class.</summary>
+        public FeaturesController()
+            : this(null, null)
+        {
+        }
+
+        /// <summary>Initializes a new instance of the <see cref="FeaturesController" /> class.</summary>
+        /// <param name="portalSettingsService">The portal settings service, or <c>null</c>.</param>
+        /// <param name="moduleSettingsService">The module settings service, or <c>null</c>.</param>
+        internal FeaturesController(IPortalSettingsService portalSettingsService, IModuleSettingsService moduleSettingsService)
+        {
+            this.portalSettingsService = portalSettingsService;
+            this.moduleSettingsService = moduleSettingsService;
+        }
+
+        /// <summary>Exports the select portal settings.</summary>
+        /// <param name="moduleId">The module ID.</param>
+        /// <returns>A <see cref="string" /> representing the settings.</returns>
+        public string ExportModule(int moduleId)
+        {
+            var moduleSettings = this.GetModuleSettingsService(moduleId).GetSettings();
+            var portalSettings = this.GetPortalSettingsService(moduleId).GetSettings().Where(ps => ShouldExport(moduleSettings, ps));
+
+            var portalSettingElements = portalSettings.Select(ps => new XElement("PortalSetting", new XAttribute("name", ps.Key), new XAttribute("value", ps.Value)));
+            return new XElement("PortalSettings", portalSettingElements).ToString();
+        }
+
+        /// <summary>Imports the module.</summary>
+        /// <param name="moduleId">The module ID.</param>
+        /// <param name="content">The content.</param>
+        /// <param name="version">The version.</param>
+        /// <param name="userId">The user ID.</param>
+        /// <exception cref="NotImplementedException">Always throws</exception>
+        public void ImportModule(int moduleId, string content, string version, int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>Indicates whether the given portal setting should be exported.</summary>
+        /// <param name="moduleSettings">The module settings.</param>
+        /// <param name="portalSetting">The portal setting <see cref="KeyValuePair{TKey,TValue}"/>.</param>
+        /// <returns><c>true</c> if the setting should be included in the export, <c>false</c> otherwise</returns>
+        private static bool ShouldExport(IDictionary<string, string> moduleSettings, KeyValuePair<string, string> portalSetting)
+        {
+            string settingValue;
+            bool selected;
+            return moduleSettings.TryGetValue(portalSetting.Key, out settingValue) && bool.TryParse(settingValue, out selected) && selected;
+        }
+
+        /// <summary>Gets the portal settings service.</summary>
+        /// <param name="moduleId">The portal ID.</param>
+        /// <returns>A <see cref="IPortalSettingsService" /> instance.</returns>
+        private IPortalSettingsService GetPortalSettingsService(int moduleId)
+        {
+            if (this.portalSettingsService == null)
+            {
+                this.portalSettingsService = new PortalSettingsService(new ModuleController().GetModule(moduleId).PortalID);
+            }
+
+            return this.portalSettingsService;
+        }
+
+        /// <summary>Gets the portal settings service.</summary>
+        /// <param name="moduleId">The portal ID.</param>
+        /// <returns>A <see cref="IPortalSettingsService" /> instance.</returns>
+        private IModuleSettingsService GetModuleSettingsService(int moduleId)
+        {
+            if (this.moduleSettingsService == null)
+            {
+                this.moduleSettingsService = new ModuleSettingsService(moduleId);
+            }
+
+            return this.moduleSettingsService;
+        }
     }
 }

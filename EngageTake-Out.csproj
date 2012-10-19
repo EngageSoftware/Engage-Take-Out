@@ -115,8 +115,6 @@
     <Content Include="References\DotNetNuke.Web.xml" />
     <Content Include="References\DotNetNuke.xml" />
     <Content Include="References\WebFormsMvp.dll" />
-    <Content Include="SQL\Uninstall.SqlDataProvider" />
-    <Content Include="SQL\01.00.00.SqlDataProvider" />
     <Content Include="References\DotNetNuke.dll" />
     <None Include="EngageTake-Out.5.dnn">
       <SubType>Designer</SubType>

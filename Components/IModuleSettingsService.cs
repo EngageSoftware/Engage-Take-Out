@@ -11,9 +11,17 @@
 
 namespace Engage.Dnn.TakeOut
 {
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+
     /// <summary>Specifies the ability to set module settings</summary>
     public interface IModuleSettingsService
     {
+        /// <summary>Gets the module's settings.</summary>
+        /// <returns>A <see cref="IDictionary{TKey,TValue}" /> instance</returns>
+        [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Justification = "Potentially queries database")]
+        IDictionary<string, string> GetSettings();
+
         /// <summary>Updates the module setting.</summary>
         /// <param name="settingName">Name of the setting.</param>
         /// <param name="settingValue">The setting value.</param>
