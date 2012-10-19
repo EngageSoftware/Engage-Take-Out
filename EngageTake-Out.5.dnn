@@ -25,19 +25,6 @@
             </resourceFile>
           </resourceFiles>
         </component>
-        <component type="Script">
-          <scripts>
-            <basePath>DesktopModules/Engage/Take-Out/SQL</basePath>
-            <script type="Install">
-              <name>01.00.00.SqlDataProvider</name>
-              <version>1.0.0</version>
-            </script>
-            <script type="UnInstall">
-              <name>Uninstall.SqlDataProvider</name>
-              <version latestVersion="latestVersion">1.0.0</version>
-            </script>
-          </scripts>
-        </component>
         <component type="Module">
           <desktopModule>
             <moduleName>Engage: Take-Out</moduleName>
