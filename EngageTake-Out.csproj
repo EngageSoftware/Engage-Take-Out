@@ -86,12 +86,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\IModuleSettingsService.cs" />
+    <Compile Include="Components\IPortalSettingsService.cs" />
+    <Compile Include="Components\ModuleSettingsService.cs" />
+    <Compile Include="Components\PortalSettingsService.cs" />
     <Compile Include="FeaturesController.cs" />
+    <Compile Include="Models\ViewModels\PortalSettingViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewTakeOutViewModel.cs" />
     <Compile Include="Presenters\ViewTakeOutPresenter.cs" />
     <Compile Include="Views\IViewTakeOutView.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\OrderPlacedEventArgs.cs" />
     <Compile Include="Views\ViewTakeOut.ascx.cs">
       <DependentUpon>ViewTakeOut.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -112,7 +118,9 @@
     <Content Include="SQL\Uninstall.SqlDataProvider" />
     <Content Include="SQL\01.00.00.SqlDataProvider" />
     <Content Include="References\DotNetNuke.dll" />
-    <None Include="EngageTake-Out.5.dnn" />
+    <None Include="EngageTake-Out.5.dnn">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="EngageTake-Out.Build" />
     <None Include="Correctness, Design, Globalization, Security.ruleset">
       <SubType>Designer</SubType>

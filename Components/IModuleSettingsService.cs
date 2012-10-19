@@ -1,4 +1,4 @@
-﻿// <copyright file="IViewTakeOutView.cs" company="Engage Software">
+// <copyright file="IModuleSettingsService.cs" company="Engage Software">
 // Engage: Take-Out
 // Copyright (c) 2004-2012
 // by Engage Software ( http://www.engagesoftware.com )
@@ -11,14 +11,12 @@
 
 namespace Engage.Dnn.TakeOut
 {
-    using System;
-
-    using DotNetNuke.Web.Mvp;
-
-    /// <summary>The contract of the main view</summary>
-    public interface IViewTakeOutView : IModuleView<ViewTakeOutViewModel>
+    /// <summary>Specifies the ability to set module settings</summary>
+    public interface IModuleSettingsService
     {
-        /// <summary>Occurs when an order is placed (i.e. when a list of settings to include in the export are submitted).</summary>
-        event EventHandler<OrderPlacedEventArgs> OrderPlaced;
+        /// <summary>Updates the module setting.</summary>
+        /// <param name="settingName">Name of the setting.</param>
+        /// <param name="settingValue">The setting value.</param>
+        void UpdateModuleSetting(string settingName, string settingValue);
     }
 }

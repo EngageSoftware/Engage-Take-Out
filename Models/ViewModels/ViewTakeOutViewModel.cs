@@ -11,8 +11,20 @@
 
 namespace Engage.Dnn.TakeOut
 {
+    using System;
+    using System.Collections.Generic;
+
     /// <summary>The view model for the Take-Out, to be displayed by <see cref="IViewTakeOutView" /></summary>
     public class ViewTakeOutViewModel
     {
+        /// <summary>Initializes a new instance of the <see cref="ViewTakeOutViewModel" /> class.</summary>
+        public ViewTakeOutViewModel()
+        {
+            this.PortalSettings = new List<PortalSettingViewModel>(30);
+        }
+
+        /// <summary>Gets the portal settings.</summary>
+        /// <value>The portal settings.</value>
+        public IList<PortalSettingViewModel> PortalSettings { get; private set; }
     }
 }

@@ -117,11 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Hello World!.Text" xml:space="preserve">
-    <value>Hello World!  I'm the Engage: Take-Out module!</value>
+  <data name="Place Order.Text" xml:space="preserve">
+    <value>Place Order</value>
   </data>
-  <data name="SettingLabel.Format" xml:space="preserve">
-    <value>The setting's value is {0}</value>
-    <comment>{0} = setting value</comment>
+  <data name="Place Order.ToolTip" xml:space="preserve">
+    <value>Set the checked settings to be included with the settings export</value>
   </data>
 </root>
