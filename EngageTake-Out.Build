@@ -378,11 +378,13 @@
     <include name="**/*.xsd" />
     <exclude name="Licenses/EULA-*"/>
     <exclude name="ReleaseNotes_*.htm"/>
+    <exclude name="CustomDictionary.xml"/>
     <exclude name="??.??.??.txt" />
     <exclude name="_ReSharper.*/**"/>
     <exclude name="**/obj/**"/>
     <exclude name="${referencesDirectory}/**"/>
     <exclude name="packages/**" />
+    <exclude name="Take-Out.Tests/**" />
   </patternset>
   <patternset id="source.fileset">
     <include name="**/*.js"/>
@@ -401,10 +403,14 @@
     <include name="**/*.txt"/>
     <include name="Licenses/EULA-*"/>
     <include name="ReleaseNotes_*.htm"/>
+    <include name="CustomDictionary.xml"/>
     <include name="??.??.??.txt" />
     <include name="MSBuild/*.dll"/>
     <include name="MSBuild/*.targets"/>
+    <include name=".nuget/**"/>
     <exclude name="**/obj/**"/>
     <exclude name="Release.txt" />
+    <exclude name="_ReSharper.*/**" />
+    <exclude name="packages/**" />
   </patternset>
 </project>

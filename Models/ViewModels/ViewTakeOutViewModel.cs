@@ -26,5 +26,9 @@ namespace Engage.Dnn.TakeOut
         /// <summary>Gets the portal settings.</summary>
         /// <value>The portal settings.</value>
         public IList<PortalSettingViewModel> PortalSettings { get; private set; }
+
+        /// <summary>Gets or sets a value indicating whether to show the success message.</summary>
+        /// <value><c>true</c> if the success message should be shown; otherwise, <c>false</c>.</value>
+        public bool ShowSuccessMessage { get; set; }
     }
 }
