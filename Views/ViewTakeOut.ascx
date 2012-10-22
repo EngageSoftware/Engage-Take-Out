@@ -1,6 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="ViewTakeOut.ascx.cs" Inherits="Engage.Dnn.TakeOut.ViewTakeOut" EnableViewState="false" %>
 <%@ Import Namespace="Globals=DotNetNuke.Common.Globals" %>
 <p class="dnnFormMessage dnnFormInfo"><%:LocalizeString("Intro") %></p>
+<asp:PlaceHolder runat="server" Visible="<%#Model.ShowSuccessMessage %>">
+    <p class="dnnFormMessage dnnFormSuccess"><%:LocalizeString("Success") %></p>
+</asp:PlaceHolder>
 
 <asp:Repeater ID="SettingsRepeater" runat="server" DataSource="<%#Model.PortalSettings.OrderBy(ps => ps.SettingName) %>">
     <HeaderTemplate><ul class="take-out-settings"></HeaderTemplate>
@@ -15,6 +18,9 @@
     <FooterTemplate></ul></FooterTemplate>
 </asp:Repeater>
 
+<asp:PlaceHolder runat="server" Visible="<%#Model.ShowSuccessMessage %>">
+    <p class="dnnFormMessage dnnFormSuccess"><%:LocalizeString("Success") %></p>
+</asp:PlaceHolder>
 <asp:Button runat="server" ResourceKey="Place Order" ToolTip='<%#LocalizeString("Place Order.ToolTip") %>' OnClick="PlaceOrderButton_Click" />
 
 <script runat="server">

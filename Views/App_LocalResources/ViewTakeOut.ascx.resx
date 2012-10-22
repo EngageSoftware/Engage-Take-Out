@@ -112,15 +112,21 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Intro.Text" xml:space="preserve">
+    <value>Select the site settings that should be included with the export.  Make sure that you check the "Include Content" check box when creating a site template in order to include these settings with the template.</value>
+  </data>
   <data name="Place Order.Text" xml:space="preserve">
     <value>Place Order</value>
   </data>
   <data name="Place Order.ToolTip" xml:space="preserve">
     <value>Set the checked settings to be included with the settings export</value>
+  </data>
+  <data name="Success.Text" xml:space="preserve">
+    <value>Your order has been successfully placed!  The selected settings will be included in the export.</value>
   </data>
 </root>
