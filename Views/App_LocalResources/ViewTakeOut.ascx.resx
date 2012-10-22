@@ -117,8 +117,72 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ControlPanelMode.Text" xml:space="preserve">
+    <value>Control Panel Mode</value>
+    <comment>Usability</comment>
+  </data>
+  <data name="ControlPanelSecurity.Text" xml:space="preserve">
+    <value>Control Panel Security</value>
+    <comment>Usability</comment>
+  </data>
+  <data name="ControlPanelVisibility.Text" xml:space="preserve">
+    <value>Control Panel Visibility</value>
+    <comment>Usability</comment>
+  </data>
+  <data name="DefaultAdminContainer.Text" xml:space="preserve">
+    <value>Default Edit Container</value>
+    <comment>Appearance</comment>
+  </data>
+  <data name="DefaultAdminSkin.Text" xml:space="preserve">
+    <value>Default Edit Skin</value>
+    <comment>Appearance</comment>
+  </data>
+  <data name="DefaultPortalAlias.Text" xml:space="preserve">
+    <value>Default Site Alias</value>
+    <comment>Site Aliases</comment>
+  </data>
+  <data name="DefaultPortalContainer.Text" xml:space="preserve">
+    <value>Default Site Container</value>
+    <comment>Appearance</comment>
+  </data>
+  <data name="DefaultPortalSkin.Text" xml:space="preserve">
+    <value>Default Site Skin</value>
+    <comment>Appearance</comment>
+  </data>
+  <data name="EnablePopups.Text" xml:space="preserve">
+    <value>Enable Pop-Ups?</value>
+    <comment>Usability</comment>
+  </data>
+  <data name="EnableSkinWidgets.Text" xml:space="preserve">
+    <value>Enable Skin Widgets?</value>
+    <comment>Appearance</comment>
+  </data>
+  <data name="FavIconPath.Text" xml:space="preserve">
+    <value>Favicon.ico path</value>
+    <comment>Appearance</comment>
+  </data>
+  <data name="HideFoldersEnabled.Text" xml:space="preserve">
+    <value>Hide System Folders?</value>
+    <comment>Usability</comment>
+  </data>
+  <data name="InlineEditorEnabled.Text" xml:space="preserve">
+    <value>Inline Editor Enabled?</value>
+    <comment>Usability</comment>
+  </data>
   <data name="Intro.Text" xml:space="preserve">
     <value>Select the site settings that should be included with the export.  Make sure that you check the "Include Content" check box when creating a site template in order to include these settings with the template.</value>
+  </data>
+  <data name="paypalsandbox.Text" xml:space="preserve">
+    <value>Use PayPal Sandbox?</value>
+    <comment>Payment</comment>
+  </data>
+  <data name="paypalsubscriptioncancelreturn.Text" xml:space="preserve">
+    <value>PayPal Cancel URL</value>
+    <comment>Payment</comment>
+  </data>
+  <data name="paypalsubscriptionreturn.Text" xml:space="preserve">
+    <value>PayPal Return URL</value>
+    <comment>Payment</comment>
   </data>
   <data name="Place Order.Text" xml:space="preserve">
     <value>Place Order</value>
@@ -126,7 +190,31 @@
   <data name="Place Order.ToolTip" xml:space="preserve">
     <value>Set the checked settings to be included with the settings export</value>
   </data>
+  <data name="PortalAliasMapping.Text" xml:space="preserve">
+    <value>Site Alias Mapping Mode</value>
+    <comment>Site Aliases</comment>
+  </data>
+  <data name="SSLEnabled.Text" xml:space="preserve">
+    <value>SSL Enabled?</value>
+    <comment>SSL</comment>
+  </data>
+  <data name="SSLEnforced.Text" xml:space="preserve">
+    <value>SSL Enforced?</value>
+    <comment>SSL</comment>
+  </data>
+  <data name="SSLURL.Text" xml:space="preserve">
+    <value>SSL URL</value>
+    <comment>SSL</comment>
+  </data>
+  <data name="STDURL.Text" xml:space="preserve">
+    <value>Standard URL</value>
+    <comment>SSL</comment>
+  </data>
   <data name="Success.Text" xml:space="preserve">
     <value>Your order has been successfully placed!  The selected settings will be included in the export.</value>
+  </data>
+  <data name="TimeZone.Text" xml:space="preserve">
+    <value>Site Time Zone</value>
+    <comment>Security</comment>
   </data>
 </root>
