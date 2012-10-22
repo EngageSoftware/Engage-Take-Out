@@ -94,6 +94,8 @@ namespace Engage.Dnn.TakeOut
                     this.moduleSettingsService.UpdateModuleSetting(setting.SettingName, setting.Selected.ToString(CultureInfo.InvariantCulture));
                     this.View.Model.PortalSettings.Add(setting);
                 }
+
+                this.View.Model.ShowSuccessMessage = true;
             }
             catch (Exception exc)
             {
