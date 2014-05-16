@@ -411,5 +411,6 @@
     <exclude name="Release.txt" />
     <exclude name="_ReSharper.*/**" />
     <exclude name="packages/**" />
+    <exclude name="**/bin/**"/>
   </patternset>
 </project>
