@@ -383,6 +383,7 @@
     <exclude name="${referencesDirectory}/**"/>
     <exclude name="packages/**" />
     <exclude name="Take-Out.Tests/**" />
+    <exclude name="**/bin/**"/>
   </patternset>
   <patternset id="source.fileset">
     <include name="**/*.js"/>
